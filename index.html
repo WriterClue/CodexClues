@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodexClues | Study & Studio</title>
-    <link rel="icon" type="image/svg+xml" href="ASSETS/LOGO.svg">
+    <link rel="icon" type="image/svg+xml" href="../ASSETS/LOGO.svg">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
@@ -16,20 +16,30 @@
     <div class="welcome-overlay" id="welcomeOverlay">
         <div class="welcome-card">
             <h1 class="welcome-title">
-                <img src="ASSETS/LOGO.svg" alt="" class="welcome-logo">
+                <img src="../ASSETS/LOGO.svg" alt="" class="welcome-logo">
                 <span>CodexClues</span>
             </h1>
             <p>"Stuff I built because I needed it, and maybe you do too."</p>
             <button class="enter-btn" onclick="openStudio()">Enter Study</button>
         </div>
     </div>
+    <!-- Theme toggle: icon-only sun/moon control; behavior is in script.js and colors are in style.css. -->
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light academia mode">
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+        </svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.2 15.1A8.5 8.5 0 0 1 8.9 3.8 8.5 8.5 0 1 0 20.2 15.1Z"></path>
+        </svg>
+    </button>
 
     <!-- Main studio layout: header navigation, page views, and footer. -->
     <div class="main-content" id="mainContent">
         <header class="studio-header">
             <!-- Brand identity and decorative social icons. -->
             <div class="brand-group">
-                <img src="ASSETS/LOGO.svg" alt="CodexClues logo" class="nav-logo">
+                <img src="../ASSETS/LOGO.svg" alt="CodexClues logo" class="nav-logo">
                 <div class="brand-details">
                     <span class="brand-name">CodexClues</span>
                     <ul class="brand-socials" aria-label="Social profiles coming soon">
@@ -137,7 +147,7 @@
             <div class="footer-legal">
                 <details>
                     <summary>Terms of Use</summary>
-                    <p>By accessing or purchasing digital assets from CodexClues, you are granted a non-exclusive, single-user license for personal or business workflows, and you agree that reselling, redistributing, or sharing the materials beyond the permitted scope is strictly prohibited.</p>
+                    <p>By accessing or purchasing digital assets from CodexClues, you are granted a non-exclusive, single-user license for personal or business workflows, and you agree that reselling, sharing, or publicly redistributing raw source files, formulas, code, or design assets is strictly prohibited.</p>
                 </details>
                 <details>
                     <summary>Privacy Policy</summary>
