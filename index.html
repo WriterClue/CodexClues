@@ -1,0 +1,200 @@
+<!-- index.html: page structure and content. Styling is in style.css; interactions are in script.js. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Document setup: character encoding, mobile sizing, page title, icon, fonts, and stylesheet. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodexClues | Study & Studio</title>
+    <link rel="icon" type="image/svg+xml" href="../ASSETS/LOGO.svg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Welcome screen: shown first and dismissed by the Enter Study button. -->
+    <div class="welcome-overlay" id="welcomeOverlay">
+        <div class="welcome-card">
+            <h1 class="welcome-title">
+                <img src="../ASSETS/LOGO.svg" alt="" class="welcome-logo">
+                <span>CodexClues</span>
+            </h1>
+            <p>"Stuff I built because I needed it, and maybe you do too."</p>
+            <button class="enter-btn" onclick="openStudio()">Enter Study</button>
+        </div>
+    </div>
+
+    <!-- Main studio layout: header navigation, page views, and footer. -->
+    <div class="main-content" id="mainContent">
+        <header class="studio-header">
+            <!-- Brand identity and decorative social icons. -->
+            <div class="brand-group">
+                <img src="../ASSETS/LOGO.svg" alt="CodexClues logo" class="nav-logo">
+                <div class="brand-details">
+                    <span class="brand-name">CodexClues</span>
+                    <ul class="brand-socials" aria-label="Social profiles coming soon">
+                        <li>
+                            <svg class="social-icon" viewBox="0 0 24 24" role="img" aria-label="GitHub">
+                                <path fill="currentColor" d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.51-1.3-1.24-1.65-1.24-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1 1.72 2.62 1.22 3.26.93.1-.73.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.16-3-.12-.29-.5-1.42.11-2.96 0 0 .95-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.1-1.45 3.05-1.15 3.05-1.15.61 1.54.23 2.67.11 2.96.72.78 1.16 1.78 1.16 3 0 4.29-2.61 5.23-5.1 5.51.4.35.76 1.03.76 2.08v3.1c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/>
+                            </svg>
+                        </li>
+                        <li>
+                            <svg class="social-icon" viewBox="0 0 24 24" role="img" aria-label="X">
+                                <path fill="currentColor" d="M18.9 2H22l-6.78 7.75L23.2 22h-6.25l-4.9-7.34L5.62 22H2.48l7.25-8.29L1.8 2h6.4l4.43 6.75L18.9 2Zm-1.1 17.9h1.73L7.28 4H5.42L17.8 19.9Z"/>
+                            </svg>
+                        </li>
+                        <li>
+                            <svg class="social-icon" viewBox="0 0 24 24" role="img" aria-label="Facebook">
+                                <path fill="currentColor" d="M13.5 22v-9.2h3.1l.46-3.6H13.5V6.9c0-1.04.29-1.75 1.79-1.75h1.91V1.93A25.6 25.6 0 0 0 14.42 1.8c-2.76 0-4.65 1.68-4.65 4.77V9.2H6.65v3.6h3.12V22h3.73Z"/>
+                            </svg>
+                        </li>
+                        <li>
+                            <svg class="social-icon" viewBox="0 0 24 24" role="img" aria-label="Instagram">
+                                <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="17.5" cy="6.8" r="1.2" fill="currentColor"/>
+                            </svg>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Buttons switch between the Studio, About, and Support panels. -->
+            <nav class="studio-nav" aria-label="Main navigation">
+                <button class="nav-link is-active" type="button" data-view="studio" aria-pressed="true">Studio</button>
+                <button class="nav-link" type="button" data-view="about" aria-pressed="false">About</button>
+                <button class="nav-link" type="button" data-view="support" aria-pressed="false">Support &amp; Contact</button>
+            </nav>
+            <span class="version-tag">v1.0-studio</span>
+        </header>
+
+        <!-- Main page area: JavaScript swaps the visible panel inside this card. -->
+        <main class="studio-container">
+            <div class="view-card" id="viewCard">
+                <!-- Studio panel: introductory text and product cards. -->
+                <section class="view-panel" data-panel="studio" aria-labelledby="studioTitle">
+                    <section class="hero-section">
+                        <h2 id="studioTitle">The Studio Workspace</h2>
+                        <p>Product information and preview images will be added here as each item is ready.</p>
+                    </section>
+
+                    <!-- Product grid: these placeholder cards open the product detail dialog. -->
+                    <div class="product-grid">
+                        <article class="product-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View Product 01 details">
+                            <div class="mockup-placeholder">
+                                <span>Preview coming soon</span>
+                            </div>
+                            <div class="product-info">
+                                <h3>Product 01</h3>
+                                <p>Product details and images are being prepared.</p>
+                                <div class="card-footer">
+                                    <span class="price">Price TBA</span>
+                                    <span class="buy-btn">View Details</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="product-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View Product 02 details">
+                            <div class="mockup-placeholder">
+                                <span>Preview coming soon</span>
+                            </div>
+                            <div class="product-info">
+                                <h3>Product 02</h3>
+                                <p>Product details and images are being prepared.</p>
+                                <div class="card-footer">
+                                    <span class="price">Price TBA</span>
+                                    <span class="buy-btn">View Details</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- About panel: information about the studio, hidden until selected. -->
+                <section class="view-panel editorial-panel" data-panel="about" aria-labelledby="aboutTitle" hidden>
+                    <span class="panel-eyebrow">A NOTE FROM THE STUDIO</span>
+                    <h2 id="aboutTitle">Some stuff, made with consideration.</h2>
+                    <p>CodexClues is an independent little workspace for useful things.</p>
+                    <p>Our philosophy is simple: make it clear, make it considered, and make it worth keeping. This studio is where each idea takes shape before it is ready to meet you.</p>
+                    <button class="text-action" type="button" data-view="studio">Explore the studio <span aria-hidden="true">&rarr;</span></button>
+                </section>
+
+                <!-- Support panel: contact information placeholder, hidden until selected. -->
+                <section class="view-panel editorial-panel" data-panel="support" aria-labelledby="supportTitle" hidden>
+                    <span class="panel-eyebrow">HERE TO HELP</span>
+                    <h2 id="supportTitle">Support &amp; Contact</h2>
+                    <p>Questions about a product or need a hand? We want to make it easy to get help.</p>
+                    <div class="support-note">
+                        <h3>Contact details are on the way</h3>
+                        <p>Direct support and contact information will be shared here as soon as the studio is ready to receive inquiries. In the meantime, product availability and purchasing details are still being prepared.</p>
+                    </div>
+                    <button class="text-action" type="button" data-view="studio">Back to the studio <span aria-hidden="true">&rarr;</span></button>
+                </section>
+            </div>
+        </main>
+        <!-- Footer: copyright notice and expandable legal information. -->
+        <footer class="studio-footer">
+            <p>&copy; 2026 CodexClues. All rights reserved.</p>
+            <div class="footer-legal">
+                <details>
+                    <summary>Terms of Use</summary>
+                    <p>By accessing or purchasing digital assets from CodexClues, you are granted a non-exclusive, single-user license for personal or business workflows, and you agree that reselling, sharing, or publicly redistributing raw source files, formulas, code, or design assets is strictly prohibited.</p>
+                </details>
+                <details>
+                    <summary>Privacy Policy</summary>
+                    <p>CodexClues respects your privacy and collects only essential purchase details, handled securely through trusted third-party partners like, Gumroad, and PayPal, solely to deliver your files, receipts, and customer support without ever storing financial credentials or selling personal data.</p>
+                </details>
+                <details>
+                    <summary>Disclaimer</summary>
+                    <p>All spreadsheets, code snippets, mini-booklets, and digital tools provided by CodexClues are offered on an "as-is" basis for informational and productivity purposes only, and while designed to be accurate and useful, they do not constitute professional financial, legal, or technical advice.</p>
+                </details>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Product detail dialog: JavaScript fills in product text and preview images. -->
+    <dialog class="product-modal" id="productModal" aria-labelledby="modalTitle">
+        <button class="modal-close" id="modalClose" type="button" aria-label="Close product details">&times;</button>
+        <!-- Product image area: preview image, carousel controls, caption, and indicators. -->
+        <div class="modal-gallery">
+            <div class="gallery-frame">
+                <button class="gallery-zoom" id="galleryZoom" type="button" aria-label="Enlarge product preview" hidden>
+                    <img class="gallery-image" id="galleryImage" alt="">
+                </button>
+                <p class="gallery-empty" id="galleryEmpty">Preview images will be added here.</p>
+                <button class="gallery-arrow gallery-previous" id="galleryPrevious" type="button" aria-label="Previous preview">&#8249;</button>
+                <button class="gallery-arrow gallery-next" id="galleryNext" type="button" aria-label="Next preview">&#8250;</button>
+            </div>
+            <div class="gallery-caption">
+                <span id="galleryCaption"></span>
+                <div class="gallery-dots" id="galleryDots" aria-label="Choose a preview"></div>
+            </div>
+        </div>
+        <!-- Product information area: description, features, price, and disabled action buttons. -->
+        <div class="modal-details">
+            <span class="modal-eyebrow">PRODUCT DETAILS</span>
+            <h2 id="modalTitle"></h2>
+            <p class="modal-description" id="modalDescription"></p>
+            <h3>Features</h3>
+            <ul class="modal-features" id="modalFeatures"></ul>
+            <div class="modal-footer">
+                <span class="modal-price" id="modalPrice"></span>
+                <div class="modal-actions">
+                        <button class="inquire-btn" type="button" disabled title="Inquiry details coming soon">Inquire</button>
+                    <button class="acquire-btn" type="button" disabled title="Checkout details coming soon">Acquire</button>
+                </div>
+            </div>
+            <p class="availability-note">Pricing, availability, and contact details are not available yet.</p>
+        </div>
+    </dialog>
+
+    <!-- Image zoom dialog: displays the selected product preview at a larger size. -->
+    <dialog class="image-zoom" id="imageZoom" aria-label="Enlarged product preview">
+        <button class="modal-close" id="imageZoomClose" type="button" aria-label="Close enlarged preview">&times;</button>
+        <img class="image-zoom-content" id="imageZoomContent" alt="">
+        <p class="image-zoom-caption" id="imageZoomCaption"></p>
+    </dialog>
+
+    <!-- Load page interactions after the HTML elements above are available. -->
+    <script src="script.js"></script>
+</body>
+</html>
