@@ -42,6 +42,14 @@ function openStudio() {
     document.getElementById('welcomeOverlay').classList.add('fade-out');
 }
 
+// Theme toggle: switches the root data-theme attribute; color palettes are defined in style.css.
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('click', () => {
+    const isLight = document.documentElement.dataset.theme !== 'light';
+    document.documentElement.dataset.theme = isLight ? 'light' : 'dark';
+    themeToggle.setAttribute('aria-label', `Switch to ${isLight ? 'dark' : 'light'} academia mode`);
+});
+
 // Page navigation: switches the visible panel and updates the active navigation button.
 const viewCard = document.getElementById('viewCard');
 let currentView = 'studio';
