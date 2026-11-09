@@ -1,11 +1,11 @@
 /* ===== Dark academia theme: default color and surface tokens ===== */
 :root {
     color-scheme: dark;
-    --bg-color: #161412;        /* Deep espresso desk background */
-    --card-bg: #221F1C;         /* Muted aged dark tone */
-    --accent: #C5A059;          /* Antique brass / muted gold */
-    --text-main: #E6E1DA;       /* Warm parchment white */
-    --text-muted: #9E9589;      /* Faded ink grey */
+    --bg-color: #161412;        
+    --card-bg: #221F1C;         
+    --accent: #C5A059;          
+    --text-main: #E6E1DA;       
+    --text-muted: #9E9589;      
     --border-color: rgba(197, 160, 89, 0.25);
     --page-overlay: rgba(22, 20, 18, 0.90);
     --welcome-overlay: rgba(22, 20, 18, 0.95);
@@ -90,8 +90,9 @@ body {
     background-color: var(--bg-color);
     background-image: linear-gradient(var(--page-overlay), var(--page-overlay)), var(--page-background);
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
     min-height: 100vh;
 }
 
@@ -607,6 +608,7 @@ body {
     max-width: none;
     max-height: min(720px, calc(100vh - 32px));
     padding: 0;
+    min-width: 0;
     overflow: auto;
     color: var(--text-main);
     background: var(--card-bg);
@@ -643,6 +645,7 @@ body {
 
 /* ===== Product image gallery: carousel, preview placeholder, and full-size zoom ===== */
 .modal-gallery {
+    min-width: 0;
     padding: 36px 26px 26px;
     display: flex;
     flex-direction: column;
@@ -801,6 +804,7 @@ body {
 
 /* ===== Product information and actions: description, features, price, and buttons ===== */
 .modal-details {
+    min-width: 0;
     padding: 48px 36px 28px;
     display: flex;
     flex-direction: column;
@@ -819,6 +823,7 @@ body {
     font-size: 27px;
     font-weight: 400;
     line-height: 1.25;
+    overflow-wrap: anywhere;
 }
 
 .modal-description {
@@ -826,6 +831,7 @@ body {
     color: var(--text-muted);
     font-size: 14px;
     line-height: 1.75;
+    overflow-wrap: anywhere;
 }
 
 .modal-details h3 {
@@ -849,6 +855,7 @@ body {
     color: var(--text-muted);
     font-size: 13px;
     line-height: 1.5;
+    overflow-wrap: anywhere;
 }
 
 .modal-features li::before {
@@ -862,6 +869,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 14px;
     margin-top: auto;
     padding-top: 24px;
@@ -876,6 +884,7 @@ body {
 
 .modal-actions {
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
 }
 
